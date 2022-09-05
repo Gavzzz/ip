@@ -1,19 +1,14 @@
 public class Deadline extends Task {
 
-    protected String deadline;
+    protected String by;
 
-    public Deadline(String description) {
-        super(description.substring(9, description.indexOf('/') - 1));
-        this.deadline = description.substring(description.indexOf('/') + 3);
-    }
-
-    @Override
-    public String fileFormat() {
-        return String.format("deadline | %s | %s | %b", super.description, deadline, super.isDone);
+    public Deadline(String description, String by) {
+        super(description);
+        this.by = by;
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by:" + deadline + ")";
+        return "[D]" + super.toString() + " (by: " + by + ")";
     }
 }

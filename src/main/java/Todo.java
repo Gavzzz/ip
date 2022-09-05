@@ -1,12 +1,7 @@
 public class Todo extends Task {
 
     public Todo(String description) {
-        super(description.substring(5));
-    }
-
-    @Override
-    public String fileFormat() {
-        return String.format("todo | %s | %b", super.description, super.isDone);
+        super(description);
     }
 
     @Override
